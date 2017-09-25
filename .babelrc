@@ -1,0 +1,7 @@
+// Babel Config
+
+{
+    "presets": [
+        "env", "react", "stage-2"
+    ]
+}
