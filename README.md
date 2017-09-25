@@ -1,6 +1,6 @@
-# React Quick Start
+# Wallet Friends
 
-Boilerplate com Webpack, React Route Dom, ES2015
+Your wallet to write down as your friends' debts.
 
 ### Instalação
 <pre>
