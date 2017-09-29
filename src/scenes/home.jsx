@@ -6,7 +6,8 @@ class Home extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            isContactModalOpen: false,
+            ModalOpen: false,
+            selectedUser: null,
             list: [
                 { name: 'Edson', value: '50,00' },
                 { name: 'Raphael', value: '20,00' },
@@ -19,31 +20,25 @@ class Home extends Component {
     }
 
     openModal() {
-        this.setState({isContactModalOpen: true})        
+        this.setState({ModalOpen: true})        
     }
 
     closeModal() {
-        this.setState({isContactModalOpen: false})
+        this.setState({ModalOpen: false})
     }
 
     render() {
-        const {isContactModalOpen} = this.state
+        const {ModalOpen} = this.state
+        let ModalBody, ModalFooter
 
-        const ModalBody = (
-            <div>
-                Testando Corpo
-            </div>
-        )
+        if(this.state.userSelected)
+            ModalBody = ( <div>Deseja realmente pagar o {this.state.userSelected.name} ?</div> )
 
-        const ModalFooter = (
-            <div>
-                <button className="btn btn-black">Pagar</button>
-            </div>
-        )
+        ModalFooter = ( <button className="btn btn-black">Pagar</button> )
 
         return (
             <section>
-                { isContactModalOpen && 
+                { ModalOpen && 
                     <Modal onClose={this.closeModal}
                     title="Pagar"
                     body={ModalBody}
@@ -54,7 +49,7 @@ class Home extends Component {
                     <div className="list-container">
                         <List openModal={this.openModal}
                         items={this.state.list}
-                        selectUser={this.state.userSelected}/>
+                        onUserSelect={userSelected => this.setState({userSelected})}/>
                         <button className='btn' onClick={this.openModal}>Pagar</button>
                     </div>
                 </div>

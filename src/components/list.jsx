@@ -4,20 +4,16 @@ class List extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            items: this.props.items,
-            userSelected: null
+            items: this.props.items
         }
-    }
-
-    componentWillMount() {
-        console.log("Lista Completa!");
     }
 
     selectUser(item) {
         this.state.items.forEach((value) => value.active = false)
         item.active = true
 
-        this.setState({ userSelected: item })
+        // this.setState({ userSelected: item })
+        this.props.onUserSelect(item)
     }
 
     render() {
@@ -41,7 +37,6 @@ class List extends Component {
                     </div>
                 </li>
                 {Items}
-                {this.state.userSelected ? this.state.userSelected.name : ''}
             </ul>
         )
     }
