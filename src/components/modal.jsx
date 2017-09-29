@@ -6,8 +6,15 @@ class Modal extends Component {
         return (
             <div className="modal">
                 <div className="modal-content">
-                    <h2>Modal Teste</h2>
-                    <button className="btn btn-black" onClick={this.props.onClose}>Close</button>
+                    <div className="modal-header">
+                        <h3>{this.props.title}</h3>
+                        <div className="close" onClick={this.props.onClose}>
+                            <i className="fa fa-close"></i>
+                        </div>
+                        {this.props.header}
+                    </div>
+                    <div className="modal-body">{this.props.body}</div>
+                    <div className="modal-footer">{this.props.footer}</div>
                 </div>
             </div>
         )

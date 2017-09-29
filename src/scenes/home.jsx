@@ -18,16 +18,33 @@ class Home extends Component {
     }
 
     closeModal() {
-        console.log(0)
         this.setState({isContactModalOpen: false})
     }
 
     render() {
         const {isContactModalOpen} = this.state
 
+        const ModalBody = (
+            <div>
+                Testando Corpo
+            </div>
+        )
+
+        const ModalFooter = (
+            <div>
+                <button className="btn btn-black">Pagar</button>
+            </div>
+        )
+
         return (
             <section>
-                { isContactModalOpen && <Modal onClose={this.closeModal} />}
+                { isContactModalOpen && 
+                    <Modal onClose={this.closeModal}
+                    title="Pagar"
+                    body={ModalBody}
+                    footer={ModalFooter}
+                    />
+                }
                 <div className="container">
                     <List openModal={this.openModal}/>
                 </div>

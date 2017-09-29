@@ -14,4 +14,26 @@
         
         color: #333;
     }
+
+    .modal-header {
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    .modal-body {
+        margin-bottom: 10px;
+    }
+
+    .close {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        opacity: .7;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
 }
