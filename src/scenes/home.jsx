@@ -6,11 +6,16 @@ class Home extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            isContactModalOpen: false
+            isContactModalOpen: false,
+            list: [
+                { name: 'Edson', value: '50,00' },
+                { name: 'Raphael', value: '20,00' },
+                { name: 'Henrique', value: '2.000,00' }
+            ]
         }
 
         this.openModal = this.openModal.bind(this)
-        this.closeModal = this.closeModal.bind(this) 
+        this.closeModal = this.closeModal.bind(this)
     }
 
     openModal() {
@@ -46,7 +51,12 @@ class Home extends Component {
                     />
                 }
                 <div className="container">
-                    <List openModal={this.openModal}/>
+                    <div className="list-container">
+                        <List openModal={this.openModal}
+                        items={this.state.list}
+                        selectUser={this.state.userSelected}/>
+                        <button className='btn' onClick={this.openModal}>Pagar</button>
+                    </div>
                 </div>
             </section>
         )
