@@ -11,24 +11,30 @@ class List extends Component {
             ],
             userSelected: false
         }
+
+        this.pay = this.pay.bind(this)
+    }
+
+    componentWillMount() {
+        console.log("Componente Criado!");
     }
 
     selectUser(item, index) {
         this.state.items.forEach((value) => {
-            this.setState({ ...value, active: false });
-            value.active = false;
-        });
+            this.setState({ ...value, active: false })
+            value.active = false
+        })
 
-        item.active = true;
-        this.setState({ item: item });
+        item.active = true
+        this.setState({ item: item })
 
-        this.setState({ ...this.state, userSelected: item });
+        this.setState({ ...this.state, userSelected: item })
     }
 
     pay() {
-        if(!this.state.userSelected) return false;
+        if(!this.state.userSelected) return false
 
-        console.log("Pago!");
+        console.log("Pago!")
     }
 
     render() {
@@ -55,11 +61,11 @@ class List extends Component {
                     {Items}
                 </ul>
                 <div className="actions">
-                    <button className={'btn pay'+(this.state.userSelected ? ' active':'')} onClick={this.pay.bind(this)}>Pagar</button>
+                    <button className={'btn pay'+(this.state.userSelected ? ' active':'')} onClick={this.props.openModal}>Pagar</button>
                 </div>
             </div>
-        )
+            )
     }
 }
 
-export default List;
+export default List

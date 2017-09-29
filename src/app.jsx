@@ -10,10 +10,10 @@ import Home from './scenes/home'
 import Friends from './scenes/friends'
 import History from './scenes/history'
 
-const App = () => ( 
+const App = () => (
     <Router>
         <section className="content-page">
-           <Header />
+        <Header />
             <Route exact path="/" component={Home} />
             <Route exact path="/friends" component={Friends} />
             <Route exact path="/history" component={History} />
