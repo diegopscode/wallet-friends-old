@@ -26,11 +26,9 @@
         
         li {
             padding: 10px;
-
             transition: all .2s;
 
             .content-list {
-                cursor: pointer;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -45,6 +43,7 @@
             }
 
             &.list-item {
+                cursor: pointer;
                 color: #eee;
                 
                 &:hover {

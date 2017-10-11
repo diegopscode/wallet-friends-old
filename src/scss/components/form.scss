@@ -21,6 +21,10 @@
         color: #333;
     }
 
+    &:active {
+        opacity: .8;
+    }
+
     &.btn-black {
         color: #333;
         border-color: #333;
@@ -28,6 +32,36 @@
         &:hover {
             background-color: #333;
             color: white;
+        }
+    }
+
+    &.btn-red {
+        color: #e41c1c;
+        border-color: #e41c1c;
+
+        &:hover {
+            background-color: #e41c1c;
+            color: white;
+        }
+    }
+}
+
+input {
+    padding: 5px;
+    outline: none;
+    border: 2px solid #ccc;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 5px;
+
+    input {
+        width: 100%;
+        font-size: 1em;
+
+        &:focus {
+            border-color: #a275f5;
         }
     }
 }

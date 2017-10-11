@@ -16,7 +16,7 @@ module.exports = {
     devServer: {
         inline: true,
         contentBase: './public',
-        port: 8080,
+        port: 8000,
         historyApiFallback: true,
         watchOptions: {
             ignored: /node_modules/
